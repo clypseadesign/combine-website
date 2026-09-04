@@ -1,0 +1,703 @@
+{
+  "website": {
+    "name": "God Cares Ministries",
+    "tagline": "A Ministry Rooted in Love",
+    "description": "Church ministry website promoting faith-based audio/visual album project 'The Holy Sabbath' and 'The Universal Royal Law of Love'"
+  },
+  "navigation": {
+    "menuItems": [
+      {
+        "label": "THE PRODUCER'S 1ST ALBUM",
+        "path": "/",
+        "description": "Home page - Producer's first album introduction"
+      },
+      {
+        "label": "THE PRESENT CONDITION OF THE WORLD",
+        "path": "/present-condition",
+        "description": "Current world condition and spiritual crisis"
+      },
+      {
+        "label": "HIGHLIGHTS OF ALBUM",
+        "path": "/highlights",
+        "description": "Key features and highlights of the album"
+      },
+      {
+        "label": "WHY THE ALBUM IS NEEDED?",
+        "path": "/why-needed",
+        "description": "Purpose and necessity of this project"
+      },
+      {
+        "label": "WHO CAN PARTICIPATE?",
+        "path": "/who-participate",
+        "description": "Eligibility and participation criteria"
+      },
+      {
+        "label": "PARTICIPANT REGISTRATION",
+        "path": "/participant-registration",
+        "description": "Registration process and forms"
+      },
+      {
+        "label": "BECOME A SPONSOR",
+        "path": "/become-sponsor",
+        "description": "Sponsorship opportunities and benefits"
+      },
+      {
+        "label": "YOUR SUPPORT MATTERS",
+        "path": "/support-matters",
+        "description": "Ways to support the mission"
+      },
+      {
+        "label": "CREDITS & SINCERE THANKS",
+        "path": "/credits",
+        "description": "Acknowledgments and credits"
+      },
+      {
+        "label": "LISTENER TESTIMONIES",
+        "path": "/testimonies",
+        "description": "User testimonials and feedback"
+      }
+    ]
+  },
+  "pages": {
+    "home": {
+      "pageName": "Producer's 1st Album",
+      "path": "/",
+      "sections": [
+        {
+          "id": "hero",
+          "type": "hero-banner",
+          "content": {
+            "backgroundImage": "bg.png",
+            "height": "400px"
+          }
+        },
+        {
+          "id": "introduction",
+          "type": "text",
+          "content": {
+            "text": "CLICK ALL THE LINKS PROVIDED ABOVE TO DISCOVER, ENROLL, JOIN, MAKE PAYMENTS, AND PARTICIPATE IN THE AUDIO/VISUAL ALBUM."
+          }
+        },
+        {
+          "id": "producer-profile",
+          "type": "profile-card",
+          "content": {
+            "heading": "THE FIRST PRODUCTION OF THE PRODUCER",
+            "subtitle": "PRODUCED IN LOVING SERVICE FOR THE UNITY OF HUMANITY",
+            "name": "C. JAMES WHITE",
+            "description": "This project is a spiritual, musical, and visual movement that reinterprets timeless moral truths through powerful storytelling, music, and global collaboration.",
+            "highlights": [
+              "Featured 14 renowned singers delivering soul-stirring performances",
+              "Composed, arranged, and written by M. John Peter with world-class quality",
+              "Contains 745 meticulously crafted music tracks across 10 thematic songs",
+              "Built on a strong theological message centered on the Sabbath truth",
+              "Designed to inspire listeners to revisit and rediscover the Word of God",
+              "Blends classical, contemporary, and spiritual music elements"
+            ]
+          }
+        },
+        {
+          "id": "purpose-mission",
+          "type": "mission-statement",
+          "content": {
+            "heading": "PURPOSE AND MISSION OF THE ALBUMS",
+            "paragraphs": [
+              "The lyrics of the albums The Holy Sabbath and The Universal Royal Law of Love have been written to convey the exact and deeper meaning of the Ten Commandments. They seek to magnify the divine principles of God's law by illustrating how the violation of each commandment has contributed to divisions among thousands of religious denominations and throughout human society. The breaking of God's law has fostered enmity within families, among relatives, villages, towns, states, and nations, resulting in hatred, jealousy, riots, conflicts, and wars that have destroyed countless human lives. Every human life is precious and invaluable.",
+              "These albums have been created solely with a sincere desire to promote love, peace, unity, and harmony among all people throughout the world. They seek to call humanity back to the eternal principles of love, obedience, peace, justice, mercy, and respect for God and for one another as revealed in the Ten Commandments.",
+              "These albums are not intended to hurt, offend, criticize, or condemn any individual, denomination, sect, religion, culture, or community, nor are they produced to please or favor any individual, organization, or group. Rather, they are presented with a pure, genuine, impartial, and prayerful heart, with the sincere desire to uplift humanity by drawing attention to the timeless moral principles of the Ten Commandments.",
+              "The purpose of these albums is to encourage every person to recognize the sacredness of human life, cultivate love for God and love for one another, strengthen families and communities, promote mutual respect and understanding, and inspire peace, unity, and harmony throughout the world. It is our earnest prayer that these songs will encourage thoughtful reflection, foster reconciliation where there is division, and inspire lives characterized by love, righteousness, and obedience to God for the blessing of all humanity."
+            ]
+          }
+        },
+        {
+          "id": "holy-sabbath",
+          "type": "sabbath-introduction",
+          "content": {
+            "title": "THE HOLY SABBATH",
+            "subtitle": "(4th OF THE TEN COMMANDMENTS)",
+            "quote": {
+              "text": "He who from the heart obeys the fourth commandment will obey the whole law",
+              "source": "Counsels for the Church, Page 262."
+            },
+            "scriptureReference": "SABBATH (Exodus 20:8–11 KJV)",
+            "description": [
+              "The Fourth Commandment—one of the longest among the Ten Commandments, containing 94 words—is found in the Holy Bible in Book of Exodus. Despite its divine importance, it continues to be overlooked by many, though it was established by God at Creation itself, before sin entered the world, with a sacred and eternal purpose as a SIGN that He is our Creator God and that we are His people.",
+              "God Himself wrote the Ten Commandments upon tables of stone with His own finger, signifying their divine authority, permanence, and sacred importance, as recorded in Book of Exodus and Book of Deuteronomy. The Holy Scriptures also reveal that God's law exists in the Heavenly Sanctuary, where the ark of His testament was seen in heaven, as written in Book of Revelation.",
+              "The Holy Sabbath album stands as a magnificent witness proclaiming that all people are the children of God.",
+              "The video production of 'The Holy Sabbath' album has now expanded beyond Tamil into English, Hebrew, Mandarin Chinese, Modern Standard Arabic, Spanish, French, Russian, Sinhala, Finnish, Nepali, Assamese, Malayalam, Kannada, Tulu, Telugu, Bengali, Punjabi, Odia, Marathi, Hindi, Gujarati, and Urdu.",
+              "Efforts are also underway to produce and share the album in as many languages of the world as possible, so that its message of truth, peace, love, and unity may reach people across every nation, culture, and tongue.",
+              "Through music, this global initiative seeks to remind humanity of God's everlasting love, His holy Sabbath, and the unity of all people under the Creator."
+            ]
+          }
+        },
+        {
+          "id": "seal-of-god",
+          "type": "theological-section",
+          "content": {
+            "heading": "SABBATH: THE SEAL OF THE LIVING GOD",
+            "description": [
+              "The book of Revelation describes God's faithful people as being sealed with the SEAL OF GOD (Revelation 7:2–4; 9:4), while an opposing power enforces a MARK upon its followers (Revelation 13:16–17; 14:9–11; 15:2; 16:2; 19:20; 20:4).",
+              "In Ezekiel, God identifies the Sabbath as a sign between Himself and His people:"
+            ],
+            "scriptureQuotes": [
+              {
+                "text": "Moreover also I gave them my sabbaths, to be a sign between me and them, that they might know that I am the LORD that sanctify them.",
+                "reference": "Ezekiel 20:12"
+              },
+              {
+                "text": "And hallow my sabbaths; and they shall be a sign between me and you, that ye may know that I am the LORD your God.",
+                "reference": "Ezekiel 20:20"
+              }
+            ]
+          }
+        },
+        {
+          "id": "10-topics",
+          "type": "topics-list",
+          "content": {
+            "heading": "10 TOPICS COVERED IN THE ALBUM",
+            "topics": [
+              "The Change of Sabbath",
+              "Institution of Sabbath",
+              "Reasons for Sabbath Keeping",
+              "Manner of Observing the Sabbath",
+              "Sabbath in Old Testament",
+              "Sabbath & Christ",
+              "Sabbath in History",
+              "Sabbath Reform",
+              "Seal of God",
+              "Sabbath in Eternity"
+            ]
+          }
+        },
+        {
+          "id": "composer",
+          "type": "profile-card",
+          "content": {
+            "name": "M. JOHN PETER",
+            "title": "Composer, Arranger & Writer",
+            "description": "World-class composer who created all 745 music tracks with meticulous craftsmanship"
+          }
+        },
+        {
+          "id": "singers",
+          "type": "grid",
+          "content": {
+            "heading": "14 RENOWNED SINGERS",
+            "singers": [
+              "Jolly Abraham",
+              "Krishnaraj",
+              "Srinivas",
+              "Unni Krishnan",
+              "Unni Menon",
+              "Suresh Peters",
+              "Dinesh",
+              "Ramu",
+              "Hema John",
+              "Kalpana",
+              "Sindhu",
+              "Febi",
+              "Kalyani",
+              "Bhuvaneshwari"
+            ]
+          }
+        }
+      ]
+    },
+    "presentCondition": {
+      "pageName": "Condition of the Present World",
+      "path": "/present-condition",
+      "title": "Condition of the Present World",
+      "sections": [
+        {
+          "id": "introduction",
+          "type": "text",
+          "content": {
+            "description": "Analysis of current world conditions and spiritual crisis affecting humanity"
+          }
+        },
+        {
+          "id": "theme-cards",
+          "type": "card-grid",
+          "content": {
+            "themes": [
+              {
+                "title": "Spiritual Crisis",
+                "description": "The world faces unprecedented spiritual challenges",
+                "points": []
+              },
+              {
+                "title": "Division and Conflict",
+                "description": "Religious and social divisions have created barriers",
+                "points": []
+              },
+              {
+                "title": "Need for Unity",
+                "description": "Call for love, peace, and harmony among all people",
+                "points": []
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "highlights": {
+      "pageName": "Highlights of the Album",
+      "path": "/highlights",
+      "title": "Highlights of the Album",
+      "sections": [
+        {
+          "id": "introduction",
+          "type": "text",
+          "content": {
+            "heading": "Introduction: The Universal Royal Law of Love",
+            "description": [
+              "The Universal Royal Law of Love is an extraordinary global audio/visual production created to resonate with all humanity—transcending language, culture, race, religion, and geographical boundaries.",
+              "At its core, this project is a celebration of unity, love, justice, and universal values of life. Through powerful visual storytelling, each theme is brought to life using real-life dramatizations, creating an immersive and emotionally engaging experience that makes timeless truths both visible and relatable to audiences around the world."
+            ]
+          }
+        },
+        {
+          "id": "project-highlights",
+          "type": "statistics",
+          "content": {
+            "heading": "Project Highlights",
+            "subtitle": "A Global Collaboration on an Unprecedented Scale",
+            "statistics": [
+              {
+                "number": "745",
+                "label": "Music Tracks"
+              },
+              {
+                "number": "14",
+                "label": "Renowned Singers"
+              },
+              {
+                "number": "10",
+                "label": "Thematic Songs"
+              },
+              {
+                "number": "20+",
+                "label": "Languages"
+              }
+            ]
+          }
+        },
+        {
+          "id": "participation-info",
+          "type": "callout-box",
+          "content": {
+            "text": [
+              "Click the link below to learn who is eligible to participate, who can register, and how to complete the registration for 'The Universal Royal Law of Love' Multilingual Audio/Visual Album.",
+              "Discover the participation guidelines, eligibility criteria, registration process, and other important information to become a part of this unique multilingual audio/visual initiative. We warmly invite individuals who share this vision to register and participate in spreading a universal message of love, unity, and hope."
+            ],
+            "link": "https://drive.google.com/file/d/1pSWbGLfnl3hpajatJxzOGGLcOjTxTCHd/view?usp=sharing"
+          }
+        }
+      ]
+    },
+    "whyNeeded": {
+      "pageName": "Why the Album is Needed",
+      "path": "/why-needed",
+      "title": "Why the Album is Needed?",
+      "sections": [
+        {
+          "id": "introduction",
+          "type": "text",
+          "content": {
+            "description": "Visual storytelling through 32 images explaining the necessity and purpose of this album project"
+          }
+        },
+        {
+          "id": "image-gallery",
+          "type": "gallery",
+          "content": {
+            "totalImages": 32,
+            "description": "Comprehensive visual journey explaining the spiritual need for this project"
+          }
+        }
+      ]
+    },
+    "whoParticipate": {
+      "pageName": "Who Can Participate",
+      "path": "/who-participate",
+      "title": "Who Can Participate?",
+      "sections": [
+        {
+          "id": "eligibility",
+          "type": "card-grid",
+          "content": {
+            "cards": [
+              {
+                "title": "Singers & Vocalists",
+                "description": "Talented singers from all backgrounds",
+                "items": [
+                  "Professional singers",
+                  "Church choir members",
+                  "Music students",
+                  "Worship leaders"
+                ]
+              },
+              {
+                "title": "Actors & Performers",
+                "description": "Those interested in dramatization",
+                "items": [
+                  "Stage actors",
+                  "Drama ministry members",
+                  "Performance artists"
+                ]
+              },
+              {
+                "title": "Production Crew",
+                "description": "Technical and creative support",
+                "items": [
+                  "Cameramen",
+                  "Sound engineers",
+                  "Video editors",
+                  "Graphic designers",
+                  "Directors"
+                ]
+              },
+              {
+                "title": "Support Roles",
+                "description": "Various supporting positions",
+                "items": [
+                  "Coordinators",
+                  "Volunteers",
+                  "Administrative support"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "participantRegistration": {
+      "pageName": "Participant Registration",
+      "path": "/participant-registration",
+      "title": "Participant Registration",
+      "sections": [
+        {
+          "id": "registration-form",
+          "type": "form-information",
+          "content": {
+            "heading": "Register to Participate",
+            "description": "Complete the registration process to join this global initiative",
+            "steps": [
+              "Fill out the registration form",
+              "Provide necessary documentation",
+              "Await confirmation",
+              "Receive participation details"
+            ]
+          }
+        },
+        {
+          "id": "contact",
+          "type": "contact-info",
+          "content": {
+            "email": "Contact email for registration queries",
+            "phone": "Contact phone number"
+          }
+        }
+      ]
+    },
+    "becomeSponsor": {
+      "pageName": "Become a Sponsor",
+      "path": "/become-sponsor",
+      "title": "Become a Sponsor",
+      "sections": [
+        {
+          "id": "sponsorship-intro",
+          "type": "text",
+          "content": {
+            "heading": "Support This Global Mission",
+            "description": "Your sponsorship helps spread a message of love, unity, and hope to people worldwide"
+          }
+        },
+        {
+          "id": "sponsorship-tiers",
+          "type": "sponsorship-levels",
+          "content": {
+            "tiers": [
+              {
+                "name": "Diamond Sponsor",
+                "amount": "Major contribution",
+                "benefits": [
+                  "Recognition in album credits",
+                  "Special acknowledgment",
+                  "Complimentary album copies"
+                ]
+              },
+              {
+                "name": "Gold Sponsor",
+                "amount": "Significant contribution",
+                "benefits": [
+                  "Name in credits",
+                  "Album copies"
+                ]
+              },
+              {
+                "name": "Silver Sponsor",
+                "amount": "Supporting contribution",
+                "benefits": [
+                  "Acknowledgment",
+                  "Digital copy"
+                ]
+              },
+              {
+                "name": "Individual Supporter",
+                "amount": "Any amount",
+                "benefits": [
+                  "Gratitude and recognition"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "supportMatters": {
+      "pageName": "Your Support Matters",
+      "path": "/support-matters",
+      "title": "Your Support Matters",
+      "sections": [
+        {
+          "id": "impact-statement",
+          "type": "text",
+          "content": {
+            "heading": "Be Part of a Meaningful Mission",
+            "description": [
+              "Your support enables this message of love, unity, and truth to reach millions worldwide",
+              "Every contribution, whether financial, through participation, or prayer, makes a significant difference",
+              "Together, we can spread hope and inspire lives characterized by love, righteousness, and obedience to God"
+            ]
+          }
+        },
+        {
+          "id": "ways-to-support",
+          "type": "list",
+          "content": {
+            "heading": "Ways You Can Support",
+            "items": [
+              "Financial contributions",
+              "Participate in the production",
+              "Share the message with others",
+              "Pray for the project's success",
+              "Volunteer your time and skills"
+            ]
+          }
+        }
+      ]
+    },
+    "credits": {
+      "pageName": "Credits & Sincere Thanks",
+      "path": "/credits",
+      "title": "Credits & Sincere Thanks",
+      "sections": [
+        {
+          "id": "gratitude-message",
+          "type": "text",
+          "content": {
+            "heading": "Heartfelt Gratitude",
+            "description": "We extend our deepest thanks to everyone who has contributed to making this project a reality"
+          }
+        },
+        {
+          "id": "acknowledgments",
+          "type": "acknowledgment-cards",
+          "content": {
+            "categories": [
+              {
+                "title": "Producer",
+                "people": ["C. James White"]
+              },
+              {
+                "title": "Composer & Arranger",
+                "people": ["M. John Peter"]
+              },
+              {
+                "title": "Singers",
+                "people": [
+                  "Jolly Abraham",
+                  "Krishnaraj",
+                  "Srinivas",
+                  "Unni Krishnan",
+                  "Unni Menon",
+                  "Suresh Peters",
+                  "Dinesh",
+                  "Ramu",
+                  "Hema John",
+                  "Kalpana",
+                  "Sindhu",
+                  "Febi",
+                  "Kalyani",
+                  "Bhuvaneshwari"
+                ]
+              },
+              {
+                "title": "Production Team",
+                "roles": [
+                  "Directors",
+                  "Cameramen",
+                  "Sound Engineers",
+                  "Video Editors",
+                  "Graphic Designers"
+                ]
+              },
+              {
+                "title": "Sponsors & Supporters",
+                "description": "All individuals and organizations who contributed financially and through prayer"
+              },
+              {
+                "title": "Volunteers & Coordinators",
+                "description": "Dedicated volunteers whose tireless efforts made this project possible"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "testimonies": {
+      "pageName": "Listener Testimonies",
+      "path": "/testimonies",
+      "title": "Listener Testimonies",
+      "sections": [
+        {
+          "id": "introduction",
+          "type": "text",
+          "content": {
+            "heading": "Lives Touched by the Message",
+            "description": "Hear from listeners around the world whose lives have been impacted by this powerful message"
+          }
+        },
+        {
+          "id": "testimony-cards",
+          "type": "testimony-grid",
+          "content": {
+            "testimonies": [
+              {
+                "name": "Sample Testimony 1",
+                "location": "Location",
+                "date": "Date",
+                "quote": "This album has transformed my understanding of God's love and the Sabbath truth",
+                "content": "Detailed testimony content..."
+              },
+              {
+                "name": "Sample Testimony 2",
+                "location": "Location",
+                "date": "Date",
+                "quote": "A life-changing experience through music and truth",
+                "content": "Detailed testimony content..."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "commonElements": {
+    "footer": {
+      "content": {
+        "copyright": "© 2024 God Cares Ministries. All rights reserved.",
+        "tagline": "A Ministry Rooted in Love",
+        "socialMedia": {
+          "facebook": "#",
+          "youtube": "#",
+          "instagram": "#"
+        },
+        "contact": {
+          "email": "contact@godcaresministries.org",
+          "phone": "+1 (XXX) XXX-XXXX"
+        }
+      }
+    },
+    "colors": {
+      "primary": {
+        "gold": "#e6b800",
+        "goldDark": "#ca8a04",
+        "goldDarker": "#b45309"
+      },
+      "secondary": {
+        "yellowLight": "#fef3c7",
+        "yellowBorder": "#fde68a",
+        "yellowLightest": "#fffbeb"
+      },
+      "neutrals": {
+        "white": "#ffffff",
+        "black": "#000000",
+        "grayText": "#374151",
+        "grayDark": "#1f2937",
+        "grayMedium": "#6b7280",
+        "grayLight": "#d1d5db"
+      },
+      "accents": {
+        "blue": "#2563eb",
+        "blueLight": "#bfdbfe",
+        "brown": "#92400e"
+      }
+    },
+    "typography": {
+      "fonts": {
+        "heading": "Anastasia",
+        "body": "Century Gothic",
+        "special": "Poiret One",
+        "fallback": "sans-serif"
+      },
+      "sizes": {
+        "h1": "26px",
+        "h2": "20-24px",
+        "h3": "15-16px",
+        "body": "11-12px",
+        "small": "10-11px"
+      }
+    },
+    "spacing": {
+      "maxContentWidth": "1024px",
+      "heroBannerHeight": "400px",
+      "sectionMargin": "40px",
+      "cardPadding": "20-25px",
+      "elementGap": "8-20px"
+    }
+  },
+  "globalContent": {
+    "callToAction": "CLICK ALL THE LINKS PROVIDED ABOVE TO DISCOVER, ENROLL, JOIN, MAKE PAYMENTS, AND PARTICIPATE IN THE AUDIO/VISUAL ALBUM.",
+    "missionStatement": "These albums have been created solely with a sincere desire to promote love, peace, unity, and harmony among all people throughout the world.",
+    "visionStatement": "Through music, this global initiative seeks to remind humanity of God's everlasting love, His holy Sabbath, and the unity of all people under the Creator.",
+    "taglines": [
+      "A Ministry Rooted in Love",
+      "Promoting Love, Peace, Unity, and Harmony",
+      "For the Unity of Humanity",
+      "A Global Message of Hope"
+    ]
+  },
+  "metadata": {
+    "extractionDate": "2024",
+    "totalPages": 10,
+    "primaryLanguage": "English",
+    "supportedLanguages": [
+      "English",
+      "Tamil",
+      "Hebrew",
+      "Mandarin Chinese",
+      "Modern Standard Arabic",
+      "Spanish",
+      "French",
+      "Russian",
+      "Sinhala",
+      "Finnish",
+      "Nepali",
+      "Assamese",
+      "Malayalam",
+      "Kannada",
+      "Tulu",
+      "Telugu",
+      "Bengali",
+      "Punjabi",
+      "Odia",
+      "Marathi",
+      "Hindi",
+      "Gujarati",
+      "Urdu"
+    ]
+  }
+}

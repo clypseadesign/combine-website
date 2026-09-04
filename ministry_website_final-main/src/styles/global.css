@@ -1,0 +1,117 @@
+@import './design-tokens.css';
+@import "tailwindcss";
+
+/* Override Century Gothic Bold to avoid local font matching issues on Windows */
+@font-face {
+    font-family: 'Century Gothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://fonts.cdnfonts.com/s/18111/GOTHICB.woff') format('woff');
+}
+@font-face {
+    font-family: 'Century Gothic';
+    font-style: normal;
+    font-weight: bold;
+    src: url('https://fonts.cdnfonts.com/s/18111/GOTHICB.woff') format('woff');
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+/* Century Gothic & Anastasia are loaded via cdnfonts <link> in index.html.
+   Body text uses Century Gothic; headings keep the fancy font. */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background-color: #ffffff;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Typography Utility Classes */
+h1, h2, h3, .font-fancy, .section-title {
+  font-family: var(--font-heading-fancy);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+}
+
+p, span, li, button, input, textarea, label {
+  font-family: var(--font-body);
+}
+
+.text-gold {
+  color: var(--accent-gold);
+}
+
+.text-blue {
+  color: var(--primary-blue);
+}
+
+/* Container */
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container-narrow {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Section Wrapper */
+.section {
+  padding: 64px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3.6rem;
+  color: var(--primary-blue);
+  margin-bottom: 16px;
+  font-family: var(--font-heading-fancy);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 48px auto;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+/* Responsive Image */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Link Reset */
+a {
+  text-decoration: none;
+  color: inherit;
+}

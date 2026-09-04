@@ -1,0 +1,132 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() && 
+             get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // Participants collection
+    match /participants/{participantId} {
+      // Allow anyone to create (registration)
+      allow create: if true;
+      
+      // Allow read for authenticated users
+      allow read: if isAuthenticated() || isAdmin();
+      
+      // Allow update/delete only for admin
+      allow update, delete: if isAdmin();
+    }
+    
+    // Donations collection
+    match /donations/{donationId} {
+      // Allow anyone to create (donation)
+      allow create: if true;
+      
+      // Allow read for authenticated users and admin
+      allow read: if isAuthenticated() || isAdmin();
+      
+      // Allow update only for admin (for status changes)
+      allow update: if isAdmin();
+      
+      // No deletion allowed
+      allow delete: if false;
+    }
+    
+    // Sponsors collection
+    match /sponsors/{sponsorId} {
+      // Allow anyone to create
+      allow create: if true;
+      
+      // Allow read only for admin
+      allow read: if isAdmin();
+      
+      // Allow update/delete only for admin
+      allow update, delete: if isAdmin();
+    }
+    
+    // Testimonies collection
+    match /testimonies/{testimonyId} {
+      // Allow anyone to create
+      allow create: if true;
+      
+      // Allow read for approved testimonies or admin
+      allow read: if resource.data.approved == true || isAdmin();
+      
+      // Allow update/delete only for admin
+      allow update, delete: if isAdmin();
+    }
+    
+    // Contacts collection
+    match /contacts/{contactId} {
+      // Allow anyone to create
+      allow create: if true;
+      
+      // Allow read only for admin
+      allow read: if isAdmin();
+      
+      // Allow update/delete only for admin
+      allow update, delete: if isAdmin();
+    }
+    
+    // Analytics collection
+    match /analytics/{analyticsId} {
+      // Allow anyone to create (page views)
+      allow create: if true;
+      
+      // Allow read only for admin
+      allow read: if isAdmin();
+      
+      // No updates or deletes
+      allow update, delete: if false;
+    }
+    
+    // Users collection
+    match /users/{userId} {
+      // Allow read for authenticated users (own profile) or admin
+      allow read: if isOwner(userId) || isAdmin();
+      
+      // Allow create only for admin (user management)
+      allow create: if isAdmin();
+      
+      // Allow update for own profile or admin
+      allow update: if isOwner(userId) || isAdmin();
+      
+      // Allow delete only for admin
+      allow delete: if isAdmin();
+    }
+    
+    // Sessions collection (for JWT sessions)
+    match /sessions/{sessionId} {
+      // Allow read/write only for authenticated users
+      allow read, write: if isAuthenticated();
+      
+      // Auto-delete old sessions (handled by backend)
+      allow delete: if isAuthenticated();
+    }
+    
+    // System configuration
+    match /system/{document} {
+      // Allow read for everyone
+      allow read: if true;
+      
+      // Allow write only for admin
+      allow write: if isAdmin();
+    }
+    
+    // Default: deny all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

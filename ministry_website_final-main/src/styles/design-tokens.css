@@ -1,0 +1,36 @@
+:root {
+  /* Exact Colors from Figma design (phase 1) */
+  --primary-blue: #005495;
+  --primary-dark-blue: #004D91;
+  --primary-navy: #004D91;
+  --accent-gold: #D6B56C;
+  --accent-light-blue: #EBF0FF;
+  --sky-blue-top: #0486E6;
+  --sky-blue-bottom: #005495;
+  --bg-light-blue: #F0F6FF;
+  --bg-card: #eff5fb;
+  --border-card: #cbe0f5;
+  
+  --text-dark: #0f2740;
+  --text-muted: #334155;
+  --text-white: #ffffff;
+  
+  /* Typography Families matching PDFs */
+  --font-heading-fancy: 'Anastasia', 'Limelight', 'Poiret One', 'Cinzel Decorative', cursive, serif;
+  --font-heading: 'Anastasia', 'Century Gothic', 'Outfit', sans-serif;
+  --font-body: 'Century Gothic', 'Outfit', system-ui, -apple-system, sans-serif;
+  /* Brush Script logo font */
+  --font-logo: 'Brush Script MT', 'Brush Script', 'Pacifico', cursive;
+  
+  /* Layout Spacing & Radius */
+  --shadow-sm: 0 2px 8px rgba(0, 85, 149, 0.08);
+  --shadow-md: 0 8px 24px rgba(0, 85, 149, 0.12);
+  --shadow-lg: 0 16px 36px rgba(0, 85, 149, 0.18);
+  --radius-sm: 8px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-pill: 9999px;
+  
+  /* Transitions */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
