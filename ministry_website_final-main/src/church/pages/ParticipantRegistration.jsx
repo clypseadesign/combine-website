@@ -1,23 +1,28 @@
 import React, { useState } from 'react';
 import Backdrop from '../components/Backdrop';
-import { supabase } from '../../utils/supabase';
+
+const FUNCTIONS_URL = import.meta.env.VITE_SUPABASE_FUNCTIONS_URL;
+const RAZORPAY_KEY_ID = import.meta.env.VITE_RAZORPAY_KEY_ID;
+const REGISTRATION_FEE_PAISE = 100000; // ₹1,000 in paise
+
+const EMPTY_FORM = {
+    fullName: '',
+    spouseName: '',
+    age: '',
+    dob: '',
+    gender: '',
+    whatsapp: '',
+    email: '',
+    occupation: '',
+    location: '',
+    govtId: '',
+    address: '',
+    role: '',
+    language: ''
+};
 
 const ParticipantRegistration = () => {
-    const [formData, setFormData] = useState({
-        fullName: '',
-        spouseName: '',
-        age: '',
-        dob: '',
-        gender: '',
-        whatsapp: '',
-        email: '',
-        occupation: '',
-        location: '',
-        govtId: '',
-        address: '',
-        role: '',
-        language: ''
-    });
+    const [formData, setFormData] = useState(EMPTY_FORM);
 
     const [loading, setLoading] = useState(false);
 
@@ -26,38 +31,97 @@ const ParticipantRegistration = () => {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
+    const createOrder = async () => {
+        const res = await fetch(`${FUNCTIONS_URL}/create-razorpay-order`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ amount: REGISTRATION_FEE_PAISE }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Failed to create order');
+        return data;
+    };
+
+    const verifyPayment = async (payment) => {
+        const res = await fetch(`${FUNCTIONS_URL}/verify-razorpay-payment`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                order_id: payment.razorpay_order_id,
+                payment_id: payment.razorpay_payment_id,
+                signature: payment.razorpay_signature,
+                participant: formData,
+            }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Payment verification failed');
+        return data;
+    };
+
+    const openRazorpay = (order, onSuccess, onError) => {
+        if (typeof window.Razorpay === 'undefined') {
+            onError(new Error('Razorpay is not loaded. Please refresh the page and try again.'));
+            return;
+        }
+        const options = {
+            key: RAZORPAY_KEY_ID,
+            amount: order.amount,
+            currency: order.currency,
+            name: 'God Cares Ministries',
+            description: 'Participant Registration Fee (₹1,000)',
+            order_id: order.order_id,
+            handler: function (response) {
+                onSuccess(response);
+            },
+            prefill: {
+                name: formData.fullName,
+                email: formData.email,
+                contact: formData.whatsapp,
+            },
+            theme: { color: '#528FF0' },
+            modal: {
+                ondismiss: function () {
+                    onError(new Error('Payment cancelled. Registration was not completed.'));
+                },
+            },
+        };
+        let rzp = new window.Razorpay(options);
+        rzp.on('payment.failed', function (response) {
+            onError(new Error('Payment failed. Please try again.'));
+        });
+        rzp.open();
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
 
         try {
-            const { error } = await supabase
-                .from('participants')
-                .insert([formData]);
+            const order = await createOrder();
 
-            if (error) throw error;
-
-            alert("Registration submitted successfully!");
-
-            setFormData({
-                fullName: '',
-                spouseName: '',
-                age: '',
-                dob: '',
-                gender: '',
-                whatsapp: '',
-                email: '',
-                occupation: '',
-                location: '',
-                govtId: '',
-                address: '',
-                role: '',
-                language: ''
-            });
+            openRazorpay(
+                order,
+                async (payment) => {
+                    try {
+                        await verifyPayment(payment);
+                        alert("Payment successful! Registration completed successfully.");
+                        setFormData(EMPTY_FORM);
+                    } catch (err) {
+                        console.error("Error verifying payment:", err);
+                        alert(err.message || "Payment was received but registration could not be completed. Please contact support.");
+                    } finally {
+                        setLoading(false);
+                    }
+                },
+                (err) => {
+                    console.error("Payment error:", err);
+                    alert(err.message || "Something went wrong with the payment.");
+                    setLoading(false);
+                }
+            );
         } catch (error) {
-            console.error("Error submitting form:", error);
-            alert("Something went wrong. Please try again.");
-        } finally {
+            console.error("Error creating order:", error);
+            alert(error.message || "Something went wrong. Please try again.");
             setLoading(false);
         }
     };
@@ -299,7 +363,7 @@ const ParticipantRegistration = () => {
                             disabled={loading}
                             style={{ backgroundColor: '#facc15', color: '#1f2937', fontWeight: 'bold', padding: '12px 30px', borderRadius: '20px', border: 'none', cursor: 'pointer', fontSize: '13px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', opacity: loading ? 0.7 : 1 }}
                         >
-                            {loading ? 'SUBMITTING...' : 'REGISTER NOW'}
+                            {loading ? 'PROCESSING...' : 'REGISTER NOW (₹1,000)'}
                         </button>
                     </div>
 
