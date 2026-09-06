@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logoImg from '/assets/41771aca37781f6391cd61ff54f932c952e2f068.png';
+import logoImg from '/logo-do-5.png';
 
 export default function Footer() {
   return (
