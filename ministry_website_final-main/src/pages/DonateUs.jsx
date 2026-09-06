@@ -1,24 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PageHero from '../components/PageHero';
-import { Heart, Check, User, Mail, Phone, Upload, Loader2 } from 'lucide-react';
+import { Heart, Check, User, Mail, Phone, Upload } from 'lucide-react';
 import { asset } from '../utils/asset';
-
-const RAZORPAY_KEY_ID = import.meta.env.VITE_RAZORPAY_KEY_ID;
-
-function loadRazorpayScript() {
-  return new Promise((resolve) => {
-    if (window.Razorpay) {
-      resolve(true);
-      return;
-    }
-    const script = document.createElement('script');
-    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
-    script.onload = () => resolve(true);
-    script.onerror = () => resolve(false);
-    document.body.appendChild(script);
-  });
-}
 
 const familyMembers = [
   { name: 'C. James White', role: 'Founder' },
@@ -117,108 +101,11 @@ export default function DonateUs() {
   const [selectedAmount, setSelectedAmount] = useState('1000');
   const [customAmount, setCustomAmount] = useState('');
   const [donor, setDonor] = useState({ name: '', email: '', phone: '' });
-  const [processing, setProcessing] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
 
-  const getFinalAmount = () => Number(customAmount || selectedAmount);
-
-  const verifyPayment = async (paymentData) => {
-    const res = await fetch('/api/verify-payment', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(paymentData)
-    });
-    if (!res.ok) {
-      const data = await res.json().catch(() => ({}));
-      throw new Error(data.error || 'Payment verification failed.');
-    }
-    return res.json();
-  };
-
-  const openRazorpay = async (orderData) => {
-    const loaded = await loadRazorpayScript();
-    if (!loaded) {
-      setErrorMessage('Could not load the payment gateway. Please try again.');
-      setProcessing(false);
-      return;
-    }
-
-    const options = {
-      key: RAZORPAY_KEY_ID,
-      amount: orderData.amount,
-      currency: orderData.currency,
-      order_id: orderData.order_id,
-      name: 'God Cares Ministries',
-      description: 'Donation',
-      prefill: {
-        name: donor.name,
-        email: donor.email,
-        contact: donor.phone
-      },
-      handler: async (response) => {
-        try {
-          await verifyPayment(response);
-          navigate('/payment-successful', {
-            state: {
-              amount: (orderData.amount / 100).toFixed(2),
-              name: donor.name,
-              payment_id: response.razorpay_payment_id,
-              order_id: response.razorpay_order_id
-            }
-          });
-        } catch (err) {
-          setErrorMessage(err.message || 'Payment could not be verified. Please contact support.');
-          setProcessing(false);
-        }
-      },
-      modal: {
-        ondismiss: () => {
-          setProcessing(false);
-        }
-      },
-      theme: { color: '#005495' }
-    };
-
-    const razorpay = new window.Razorpay(options);
-    razorpay.on('payment.failed', (response) => {
-      const code = response.error?.code || '';
-      const msg = response.error?.description || 'Payment failed. Please try again.';
-      setErrorMessage(`${msg}${code ? ' (' + code + ')' : ''}`);
-      setProcessing(false);
-    });
-    razorpay.open();
-  };
-
-  const handleDonate = async (e) => {
+  const handleDonate = (e) => {
     e.preventDefault();
-    setErrorMessage('');
-    const finalAmt = getFinalAmount();
-
-    if (!finalAmt || finalAmt <= 0) {
-      setErrorMessage('Please enter a valid donation amount.');
-      return;
-    }
-
-    setProcessing(true);
-
-    try {
-      const res = await fetch('/api/create-order', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount: finalAmt * 100 })
-      });
-
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || 'Could not create payment order.');
-      }
-
-      const orderData = await res.json();
-      await openRazorpay(orderData);
-    } catch (err) {
-      setErrorMessage(err.message || 'Something went wrong. Please try again.');
-      setProcessing(false);
-    }
+    const finalAmt = customAmount || selectedAmount;
+    navigate('/payment-successful', { state: { amount: finalAmt, name: donor.name } });
   };
 
   const scrollToForm = (e) => {
@@ -570,14 +457,8 @@ export default function DonateUs() {
                 />
 
                 <div style={{ textAlign: 'center', marginTop: '8px' }}>
-                  {errorMessage && (
-                    <p style={{ color: '#dc2626', fontSize: '0.88rem', fontWeight: 600, margin: '0 0 12px 0' }}>
-                      {errorMessage}
-                    </p>
-                  )}
                   <button
                     type="submit"
-                    disabled={processing}
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
@@ -589,21 +470,11 @@ export default function DonateUs() {
                       padding: '12px 28px',
                       fontWeight: 700,
                       fontSize: '0.95rem',
-                      cursor: processing ? 'not-allowed' : 'pointer',
-                      opacity: processing ? 0.7 : 1
+                      cursor: 'pointer'
                     }}
                   >
-                    {processing ? (
-                      <>
-                        <Loader2 size={16} style={{ animation: 'spin 1s linear infinite' }} />
-                        Processing...
-                      </>
-                    ) : (
-                      <>
-                        Make a Donation
-                        <Heart size={16} />
-                      </>
-                    )}
+                    Make a Donation
+                    <Heart size={16} />
                   </button>
                 </div>
               </div>
