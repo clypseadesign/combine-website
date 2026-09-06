@@ -1,15 +1,16 @@
 import React from 'react';
-import dollar from '../assets/producer/pdf_65_1024x1024.jpeg'
+import dollar from '../assets/dollar.png';
+
 const RewardAndConfessionsComponent = () => {
     return (
-        <div style={{ maxWidth: '900px', margin: '0 auto', padding: '40px 20px', fontFamily: '"Century Gothic", sans-serif', color: '#1f2937' }}>
+        <div style={{ maxWidth: '950px', margin: '0 auto', padding: '20px 20px 60px', fontFamily: '"Century Gothic", sans-serif', color: '#1f2937' }}>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '40px', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '30px' }}>
 
-                {/* Left: Image / Dummy Image */}
-                <div style={{ flex: '0 0 auto', maxWidth: '400px', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)', border: '1px solid #e5e7eb' }}>
+                {/* Left: $1000 Cash Reward Image */}
+                <div style={{ flex: '1', minWidth: '320px', maxWidth: '440px', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 10px 20px -3px rgba(0,0,0,0.12), 0 4px 6px -4px rgba(0,0,0,0.05)', border: '1px solid #e5e7eb' }}>
                     <img
                         src={dollar}
-                        alt="Reward and Sabbath Information"
+                        alt="$1,000 Reward for the Missing Bible Text"
                         style={{ width: '100%', height: 'auto', display: 'block' }}
                     />
                 </div>

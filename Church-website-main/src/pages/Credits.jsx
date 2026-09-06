@@ -60,8 +60,8 @@ const Credits = () => {
     const supportersText = "A special note of gratitude to the volunteers and coordinators whose dedication, time, and tireless efforts continue to drive this mission forward.";
 
     return (
-        <div className="min-h-screen bg-black text-white p-8">
-            <Backdrop title="Credit & Sincere Thanks" />
+        <div style={{ backgroundColor: '#ffffff', color: '#000000', minHeight: '100vh', width: '100%' }}>
+            <Backdrop title="Credits & Sincere Thanks" />
             <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '60px 20px', fontFamily: '"Century Gothic", sans-serif', textAlign: 'center' }}>
                 {/* Heading */}
                 <h2 style={{ fontSize: '26px', fontFamily: "Anastasia", fontWeight: '900', color: '#b45309', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '20px' }}>

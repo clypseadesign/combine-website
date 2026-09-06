@@ -8,9 +8,18 @@ body {
     box-sizing: border-box;
 }
 
-/* Full width design to match PDF panoramic layout */
-.page-container,
+/* Ensure page containers and heroes stretch 100% edge-to-edge */
+main {
+    width: 100%;
+    max-width: 100%;
+}
+
 main > div {
+    width: 100%;
+    max-width: 100%;
+}
+
+.page-container {
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
@@ -48,5 +57,31 @@ main > div {
     .hero {
         height: 320px;
         padding: 30px 15px;
+    }
+}
+
+/* Scrollbar Elimination Utility (UI/UX Pro Max) */
+.no-scrollbar::-webkit-scrollbar {
+    display: none !important;
+}
+.no-scrollbar {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+}
+
+/* Navbar Responsive Breakpoints */
+.nav-desktop-container {
+    display: flex;
+}
+.nav-mobile-bar {
+    display: none;
+}
+
+@media (max-width: 880px) {
+    .nav-desktop-container {
+        display: none !important;
+    }
+    .nav-mobile-bar {
+        display: flex !important;
     }
 }

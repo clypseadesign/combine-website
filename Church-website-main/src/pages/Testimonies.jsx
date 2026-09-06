@@ -28,8 +28,8 @@ import dani from '../assets/testimonies/dani.png';
 import mohan from '../assets/testimonies/mohan.png';
 const Testimonies = () => {
     return (
-        <div className="min-h-screen bg-black text-white p-8">
-            <Backdrop title="Listner Testimones" />
+        <div style={{ backgroundColor: '#ffffff', color: '#000000', minHeight: '100vh', width: '100%' }}>
+            <Backdrop title="Listener Testimonies" />
             <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '60px 20px', fontFamily: '"Century Gothic", sans-serif' }}>
                 {/* Header Section */}
                 <div style={{ textAlign: 'center', marginBottom: '50px' }}>

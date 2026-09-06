@@ -1,6 +1,6 @@
 import React from 'react';
-import leftCard from '../assets/producer/christianity-fragmented.png';
-import rightCard from '../assets/producer/tables-of-stone.png';
+import leftCard from '../assets/jesus3.png';
+import rightCard from '../assets/jesus4.png';
 
 const ComeOutOfHerSection = () => {
     return (

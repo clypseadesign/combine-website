@@ -16,7 +16,7 @@ import holySabbathCd from '../assets/producer/holy-sabbath-cd.png';
 import bookletCollage from '../assets/producer/pdf_24_1600x558.jpeg';
 import spiritualSection from '../assets/producer/spiritual-significance.png';
 import fragmentedSection from '../assets/producer/christianity-fragmented.png';
-import tablesOfStone from '../assets/producer/tables-of-stone.png';
+import tablesOfStone from '../assets/producer/tables-of-stone-uniform.png';
 import noAdditions from '../assets/producer/no-additions.png';
 import sabbathAtCreation from '../assets/producer/frame-136.png';
 import signOfCreator from '../assets/producer/frame-137.png';
@@ -26,7 +26,14 @@ import johnPeterPhoto from '../assets/producer/pdf_49_699x453.jpeg';
 import vishaldoPhoto from '../assets/producer/pdf_54_718x991.jpeg';
 import sealImage from '../assets/producer/pdf_58_1254x1254.jpeg';
 import spiritualArt from '../assets/producer/pdf_04_1238x1271.jpeg';
-import noAdditionsArt from '../assets/producer/pdf_00_1672x941.jpeg';
+import Jesus1 from '../assets/jesus1.png';
+import Jesus2 from '../assets/jesus2.png';
+import Jesus5 from '../assets/jesus5.png';
+import Jesus6 from '../assets/jesus6.png';
+import Jesus7 from '../assets/jesus7.png';
+import Jesus8 from '../assets/jesus8.png';
+import Jesus9 from '../assets/jesus9.png';
+import Jesus10 from '../assets/jesus10.png';
 
 const GOLD = '#c9a227';
 const GOLD_DARK = '#b45309';
@@ -50,12 +57,14 @@ const bodyStyle = {
     fontFamily: '"Century Gothic", sans-serif',
 };
 
-const FrameImage = ({ src, alt }) => (
-    <img
-        src={src}
-        alt={alt}
-        style={{ width: '100%', height: 'auto', display: 'block' }}
-    />
+const FrameImage = ({ src, alt, maxWidth = '970px' }) => (
+    <div style={{ maxWidth, margin: '0 auto', width: '100%' }}>
+        <img
+            src={src}
+            alt={alt}
+            style={{ width: '100%', height: 'auto', display: 'block', margin: '0 auto' }}
+        />
+    </div>
 );
 
 const RoundedGraphic = ({ src, alt, maxWidth = '1100px', radius = '36px' }) => (
@@ -291,16 +300,16 @@ const ProducerAlbum = () => {
                 </a>
 
                 <div style={{ marginTop: '72px' }}>
-                    <FrameImage src={familySection} alt="The family behind God Cares Ministries" />
+                    <FrameImage src={familySection} alt="The family behind God Cares Ministries" maxWidth="1200px" />
                 </div>
-                <div style={{ marginTop: '40px' }}>
-                    <FrameImage src={johnPeterSection} alt="M. John Peter, lyricist and music director" />
+                <div style={{ marginTop: '48px' }}>
+                    <FrameImage src={johnPeterSection} alt="M. John Peter, lyricist and music director" maxWidth="1200px" />
                 </div>
-                <div style={{ marginTop: '40px' }}>
-                    <FrameImage src={singersGrid} alt="Fourteen singers of The Holy Sabbath album" />
+                <div style={{ marginTop: '48px' }}>
+                    <FrameImage src={singersGrid} alt="Fourteen singers of The Holy Sabbath album" maxWidth="1200px" />
                 </div>
-                <div style={{ marginTop: '40px' }}>
-                    <FrameImage src={holySabbathCd} alt="The Holy Sabbath audio CD" />
+                <div style={{ marginTop: '48px' }}>
+                    <FrameImage src={holySabbathCd} alt="The Holy Sabbath audio CD" maxWidth="1200px" />
                 </div>
 
                 <h2 style={{ ...headingStyle, fontSize: '26px', textAlign: 'center', marginTop: '64px' }}>THE 10 TOPICS COVERED</h2>
@@ -329,27 +338,26 @@ const ProducerAlbum = () => {
                     </div>
                 </div>
 
+                <div style={{ marginTop: '64px' }}>
+                    <FrameImage src={spiritualSection} alt="Spiritual significance of the Sabbath" maxWidth="1100px" />
+                </div>
                 <div style={{ marginTop: '56px' }}>
-                    <FrameImage src={spiritualSection} alt="Spiritual significance of the Sabbath" />
+                    <FrameImage src={fragmentedSection} alt="Christianity is fragmented — why?" maxWidth="1100px" />
                 </div>
-                <div style={{ marginTop: '40px' }}>
-                    <FrameImage src={fragmentedSection} alt="Christianity is fragmented — why?" />
+                <div style={{ marginTop: '64px' }}>
+                    <FrameImage src={tablesOfStone} alt="God wrote with His own finger on 2 tables of stone" maxWidth="970px" />
                 </div>
-                <div style={{ marginTop: '40px' }}>
-                    <FrameImage src={tablesOfStone} alt="God wrote with His own finger on two tables of stone" />
+                <div style={{ marginTop: '64px' }}>
+                    <FrameImage src={noAdditions} alt="No additions. No alterations." maxWidth="970px" />
                 </div>
-                <div style={{ marginTop: '40px' }}>
-                    <FrameImage src={noAdditions} alt="No additions. No alterations." />
+                <div style={{ marginTop: '64px' }}>
+                    <FrameImage src={sabbathAtCreation} alt="Sabbath at creation" maxWidth="970px" />
                 </div>
-                <RoundedGraphic src={noAdditionsArt} alt="God's Word is complete and perfect" />
-                <div style={{ marginTop: '24px' }}>
-                    <FrameImage src={sabbathAtCreation} alt="Sabbath at creation" />
+                <div style={{ marginTop: '64px' }}>
+                    <FrameImage src={signOfCreator} alt="The Sabbath: the sign of our Creator" maxWidth="970px" />
                 </div>
-                <div style={{ marginTop: '24px' }}>
-                    <FrameImage src={signOfCreator} alt="The Sabbath: the sign of our Creator" />
-                </div>
-                <div style={{ marginTop: '24px' }}>
-                    <FrameImage src={rememberCommandment} alt="The only commandment that begins with Remember" />
+                <div style={{ marginTop: '64px' }}>
+                    <FrameImage src={rememberCommandment} alt="The only commandment that begins with Remember" maxWidth="970px" />
                 </div>
 
                 <h2 style={{ ...headingStyle, fontSize: '24px', textAlign: 'center', marginTop: '64px' }}>SABBATH WAS MADE FOR MANKIND</h2>
@@ -415,43 +423,43 @@ const ProducerAlbum = () => {
 
             <JesusCustomSection
                 title="IT WAS THE CUSTOM OF JESUS CHRIST TO KEEP THE SABBATH HOLY:"
-                imageUrl={spiritualArt}
+                imageUrl={Jesus1}
                 imageAlt="Jesus custom to keep the Sabbath holy"
             />
             <JesusCustomSection
                 title="IT WAS THE CUSTOM OF PAUL AND OTHERS TO KEEP THE SABBATH HOLY."
-                imageUrl={johnPeterPhoto}
+                imageUrl={Jesus2}
                 imageAlt="Paul and others kept the Sabbath holy"
             />
             <SectionImage />
             <JesusCustomSection
                 title="TOGETHER IN ONE ACCORD. UNITY IN THE BODY OF CHRIST."
-                imageUrl={signOfCreator}
+                imageUrl={Jesus5}
                 imageAlt="Together in one accord"
             />
             <JesusCustomSection
                 title="COMMANDMENT-KEEPING PEOPLE WILL ENTER HEAVEN."
-                imageUrl={tablesOfStone}
+                imageUrl={Jesus6}
                 imageAlt="Commandment-keeping people will enter heaven"
             />
             <JesusCustomSection
                 title="COMMANDMENTS-KEEPING PEOPLE WILL WORSHIP GOD EVERY SABBATH IN THE NEW HEAVENS AND THE NEW EARTH."
-                imageUrl={sabbathAtCreation}
+                imageUrl={Jesus7}
                 imageAlt="Worship every Sabbath in the new earth"
             />
             <JesusCustomSection
                 title="FOLLOW THE EXAMPLE OF JESUS"
-                imageUrl={rememberCommandment}
+                imageUrl={Jesus8}
                 imageAlt="Follow the example of Jesus"
             />
             <JesusCustomSection
                 title="AS A NATION'S FLAG IDENTIFIES ITS CITIZENS, GOD'S SABBATH IS THE DIVINE SIGN THAT IDENTIFIES HIS PEOPLE, DECLARING THAT WE BELONG TO HIM AND ARE HIS CHILDREN:"
-                imageUrl={sealImage}
+                imageUrl={Jesus9}
                 imageAlt="The Sabbath is the divine sign of God's people"
             />
             <JesusCustomSection
-                title="THE TEN COMMANDMENTS AND THE BEATITUDES. A PERFECT HARMONY."
-                imageUrl={holySabbathSection}
+                title="THE TEN COMMANDMENTS AND THE BEATITUDES: A PERFECT HARMONY:"
+                imageUrl={Jesus10}
                 imageAlt="The Ten Commandments and the Beatitudes"
             />
             <OurDecisionAndStudySection />

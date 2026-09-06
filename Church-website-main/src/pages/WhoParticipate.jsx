@@ -35,7 +35,7 @@ const JoinCard = ({ title, items }) => {
 
 const WhoParticipate = () => {
     return (
-        <div className="min-h-screen bg-black text-white p-8">
+        <div style={{ backgroundColor: '#ffffff', color: '#000000', minHeight: '100vh', width: '100%' }}>
             <Backdrop title="Who Can Participate ?" />
             <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '60px 20px', fontFamily: '"Century Gothic", sans-serif', textAlign: 'center' }}>
 

@@ -21,7 +21,7 @@ import Testimonies from './pages/Testimonies';
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen bg-black">
+      <div className="flex flex-col min-h-screen bg-white">
         {/* Persistent Navbar at the top */}
         <Navbar />
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import book from '../assets/producer/pdf_13_261x360.jpeg'
-import decision from '../assets/producer/remember-commandment.png'
+import decision from '../assets/decision.png'
 
 const OurDecisionAndStudySection = () => {
     return (
@@ -9,26 +9,32 @@ const OurDecisionAndStudySection = () => {
             {/* Part 1: Our Decision */}
             <section style={{ marginBottom: '60px' }}>
                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '40px', flexWrap: 'wrap', justifyContent: 'center' }}>
-                    <div style={{ flex: '1', minWidth: '300px', maxWidth: '450px', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)', border: '1px solid #e5e7eb' }}>
+                    <div style={{ flex: '1', minWidth: '320px', maxWidth: '460px', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 10px 20px -3px rgba(0,0,0,0.12), 0 4px 6px -4px rgba(0,0,0,0.05)', border: '1px solid #e5e7eb' }}>
                         <img
                             src={decision}
-                            alt="Our Decision Sabbath Worship"
+                            alt="Two Days, Two Ways of Worship. Our Decision."
                             style={{ width: '100%', height: 'auto', display: 'block' }}
                         />
                     </div>
 
-                    <div style={{ flex: '1', minWidth: '300px', maxWidth: '480px' }}>
-                        <h2 style={{ fontSize: '20px', fontFamily: "Anastasia", fontWeight: '900', color: '#b45309', marginBottom: '20px', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
+                    <div style={{ flex: '1', minWidth: '300px', maxWidth: '480px', textAlign: 'left' }}>
+                        <h2 style={{ fontSize: '24px', fontFamily: "Anastasia", fontWeight: '900', color: '#ca8a04', marginBottom: '20px', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
                             OUR DECISION
                         </h2>
-                        <ul style={{ paddingLeft: '20px', fontSize: '13px', lineHeight: '1.8', color: '#374151', display: 'flex', flexDirection: 'column', gap: '10px', listStyleType: 'disc' }}>
-                            <li>We choose God's Word above human tradition.</li>
-                            <li>We choose the Creator above the traditions of men.</li>
-                            <li>We choose to honor His holy Seventh-day Sabbath—the sign between God and His people.</li>
-                        </ul>
-                        <p style={{ fontSize: '13px', lineHeight: '1.8', color: '#374151', marginTop: '15px', fontStyle: 'italic' }}>
-                            "Choose you this day whom ye will serve... but as for me and my house, we will serve the Lord." — Joshua 24:15 (KJV)
-                        </p>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '13.5px', lineHeight: '1.7', color: '#374151' }}>
+                            <p style={{ margin: 0 }}>
+                                We choose God's Word above human tradition.
+                            </p>
+                            <p style={{ margin: 0 }}>
+                                We choose the Creator above the traditions of men.
+                            </p>
+                            <p style={{ margin: 0 }}>
+                                We choose to honor His holy Seventh-day Sabbath—the sign between God and His people.
+                            </p>
+                            <p style={{ margin: '8px 0 0 0', fontStyle: 'italic', color: '#4b5563' }}>
+                                "Choose you this day whom ye will serve... but as for me and my house, we will serve the Lord." — Joshua 24:15 (KJV)
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
