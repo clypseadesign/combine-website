@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Backdrop from '../components/Backdrop';
+import { supabase } from '../../utils/supabase';
 
 const ParticipantRegistration = () => {
     const [formData, setFormData] = useState({
@@ -20,9 +21,6 @@ const ParticipantRegistration = () => {
 
     const [loading, setLoading] = useState(false);
 
-    // Replace this with your actual Google Apps Script Web App URL
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw00JjJnhyVr3H4NQL_let-0Qjum25C9mdqSueWXOFkATxDB1-IVgIJEnzHfbfPTY6e/exec';
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
@@ -33,19 +31,14 @@ const ParticipantRegistration = () => {
         setLoading(true);
 
         try {
-            // Using no-cors mode if handling standard simple requests or standard fetch
-            await fetch(SCRIPT_URL, {
-                method: 'POST',
-                mode: 'no-cors', // Bypasses browser CORS restrictions with Google Apps Script
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData)
-            });
+            const { error } = await supabase
+                .from('participants')
+                .insert([formData]);
+
+            if (error) throw error;
 
             alert("Registration submitted successfully!");
 
-            // Clear form after successful submission
             setFormData({
                 fullName: '',
                 spouseName: '',

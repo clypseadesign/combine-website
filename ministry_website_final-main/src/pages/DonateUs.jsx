@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PageHero from '../components/PageHero';
-import { Heart, Check, User, Mail, Phone, Upload } from 'lucide-react';
+import { Heart, Check, User, Mail, Phone, Upload, Loader2 } from 'lucide-react';
 import { asset } from '../utils/asset';
+import { supabase } from '../utils/supabase';
 
 const familyMembers = [
   { name: 'C. James White', role: 'Founder' },
@@ -101,11 +102,36 @@ export default function DonateUs() {
   const [selectedAmount, setSelectedAmount] = useState('1000');
   const [customAmount, setCustomAmount] = useState('');
   const [donor, setDonor] = useState({ name: '', email: '', phone: '' });
+  const [message, setMessage] = useState('');
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleDonate = (e) => {
+  const handleDonate = async (e) => {
     e.preventDefault();
     const finalAmt = customAmount || selectedAmount;
-    navigate('/payment-successful', { state: { amount: finalAmt, name: donor.name } });
+
+    setSubmitting(true);
+    try {
+      const { error } = await supabase
+        .from('donations')
+        .insert([
+          {
+            name: donor.name,
+            email: donor.email,
+            phone: donor.phone,
+            amount: Number(finalAmt),
+            message: message || null
+          }
+        ]);
+
+      if (error) throw error;
+
+      navigate('/payment-successful', { state: { amount: finalAmt, name: donor.name } });
+    } catch (err) {
+      console.error('Error saving donation:', err);
+      alert('Could not save your donation record. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const scrollToForm = (e) => {
@@ -453,12 +479,15 @@ export default function DonateUs() {
                 <textarea
                   rows={4}
                   placeholder="Write your message here....."
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #bfbfbf', fontSize: '0.92rem', resize: 'vertical' }}
                 />
 
                 <div style={{ textAlign: 'center', marginTop: '8px' }}>
                   <button
                     type="submit"
+                    disabled={submitting}
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
@@ -470,11 +499,21 @@ export default function DonateUs() {
                       padding: '12px 28px',
                       fontWeight: 700,
                       fontSize: '0.95rem',
-                      cursor: 'pointer'
+                      cursor: submitting ? 'not-allowed' : 'pointer',
+                      opacity: submitting ? 0.7 : 1
                     }}
                   >
-                    Make a Donation
-                    <Heart size={16} />
+                    {submitting ? (
+                      <>
+                        <Loader2 size={16} style={{ animation: 'spin 1s linear infinite' }} />
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        Make a Donation
+                        <Heart size={16} />
+                      </>
+                    )}
                   </button>
                 </div>
               </div>

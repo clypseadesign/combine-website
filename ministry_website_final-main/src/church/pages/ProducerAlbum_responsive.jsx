@@ -146,9 +146,12 @@ const ProducerAlbum = () => {
             <img className="producer-hero" src={heroImage} alt="The Universal Royal Law of Love" />
 
             <div className="producer-wrap">
-                <p
-                    className="producer-intro"
+                <a
+                    href="https://project.theuniversalroyallawoflove.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     style={{
+                        display: 'block',
                         fontSize: '22px',
                         fontWeight: 700,
                         color: '#111',
@@ -157,10 +160,14 @@ const ProducerAlbum = () => {
                         margin: '0 0 56px 0',
                         textTransform: 'uppercase',
                         textAlign: 'center',
+                        textDecoration: 'none',
+                        transition: 'color 0.2s ease-in-out',
                     }}
+                    onMouseOver={(e) => { e.currentTarget.style.color = GOLD; }}
+                    onMouseOut={(e) => { e.currentTarget.style.color = '#111'; }}
                 >
                     CLICK ALL THE LINKS PROVIDED ABOVE TO DISCOVER, ENROLL, JOIN, MAKE PAYMENTS, AND PARTICIPATE IN THE AUDIO/VISUAL ALBUM.
-                </p>
+                </a>
 
                 <h2 style={{ ...headingStyle, fontSize: '32px', textAlign: 'center', marginBottom: '40px' }}>
                     THE FIRST PRODUCTION OF THE PRODUCER

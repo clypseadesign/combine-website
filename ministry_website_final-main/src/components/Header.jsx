@@ -16,8 +16,7 @@ export default function Header() {
     { name: 'DONATE US', path: '/donate-us' },
     { name: 'CONTACT US', path: '/contact-us' },
     { name: 'TRANSPARENCY & LEGAL', path: '/transparency-legal' },
-    { name: 'PERSONAL GRATITUDE & SINCERE THANKS', path: '/gratitude' },
-    { name: 'CHURCH WEBSITE', path: '/church' }
+    { name: 'PERSONAL GRATITUDE & SINCERE THANKS', path: '/gratitude' }
   ];
 
   return (

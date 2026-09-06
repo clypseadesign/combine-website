@@ -126,9 +126,9 @@ const ProducerAlbum = () => {
 
             {/* Main Body Content */}
             <div style={{ maxWidth: '1920px', margin: '0 auto', padding: '80px 60px', textAlign: 'center' }}>
-                <p style={{ fontSize: '36px', fontWeight: 'bold', color: 'black', lineHeight: "48px", letterSpacing: '1px', marginBottom: '70px', textTransform: 'uppercase', fontFamily: "Poiret One ", width: "100%" }}>
+                <a href="https://project.theuniversalroyallawoflove.org/" target="_blank" rel="noopener noreferrer" style={{ fontSize: '36px', fontWeight: 'bold', color: 'black', lineHeight: "48px", letterSpacing: '1px', marginBottom: '70px', textTransform: 'uppercase', fontFamily: "Poiret One", width: "100%", textDecoration: 'none', display: 'block' }}>
                     CLICK ALL THE LINKS PROVIDED ABOVE TO DISCOVER, ENROLL, JOIN, MAKE PAYMENTS, AND PARTICIPATE IN THE AUDIO/VISUAL ALBUM.
-                </p>
+                </a>
 
                 <h2 style={{
                     fontSize: '26px', fontWeight: '900', color: '#ca8a04', letterSpacing: '1px', marginBottom: '25px', textTransform: 'uppercase', fontFamily: "Anastasia", display: "flex", width: "100%", maxWidth: "565px",
