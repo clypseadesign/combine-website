@@ -5,8 +5,13 @@ import PageHero from '../components/PageHero';
 
 export default function PaymentSuccessful() {
   const location = useLocation();
-  const { amount = '1000', name = 'Generous Supporter' } = location.state || {};
-  const transactionId = 'GCM-' + Math.floor(10000000 + Math.random() * 90000000);
+  const {
+    amount = '1000',
+    name = 'Generous Supporter',
+    payment_id = '',
+    order_id = ''
+  } = location.state || {};
+  const transactionId = payment_id || 'GCM-' + Math.floor(10000000 + Math.random() * 90000000);
 
   return (
     <div>
