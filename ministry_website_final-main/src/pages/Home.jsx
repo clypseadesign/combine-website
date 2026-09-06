@@ -62,7 +62,7 @@ export default function Home() {
     <div>
       {/* Hero Section using /home-page/hero.png */}
       <section style={{ position: 'relative', width: '100%', overflow: 'hidden', background: '#005495' }}>
-        <a href="https://project.theuniversalroyallawoflove.org/" target="_blank" rel="noopener noreferrer" style={{ display: 'block', width: '100%' }}>
+        <a href="https://project.theuniversalroyallawoflove.org/" style={{ display: 'block', width: '100%' }}>
           <img 
             src={asset('/home-page/hero.png')}
             alt="The Universal Royal Law of Love - Hero Banner" 

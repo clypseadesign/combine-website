@@ -8,6 +8,10 @@ body {
     box-sizing: border-box;
 }
 
+p {
+    text-align: justify;
+}
+
 /* Ensure page containers and heroes stretch 100% edge-to-edge */
 main {
     width: 100%;

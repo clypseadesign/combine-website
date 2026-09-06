@@ -58,6 +58,10 @@ p, span, li, button, input, textarea, label {
   font-family: var(--font-body);
 }
 
+p {
+  text-align: justify;
+}
+
 .text-gold {
   color: var(--accent-gold);
 }
