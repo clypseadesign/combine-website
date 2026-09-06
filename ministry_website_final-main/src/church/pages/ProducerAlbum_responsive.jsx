@@ -147,7 +147,7 @@ const ProducerAlbum = () => {
 
             <div className="producer-wrap">
                 <a
-                    href="https://project.theuniversalroyallawoflove.org/"
+                    href="https://theuniversalroyallawoflove.org/"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{

@@ -37,7 +37,7 @@ export default function Backdrop({ title }) {
                 </h1>
 
                 <a 
-                    href="https://project.theuniversalroyallawoflove.org/"
+                    href="https://theuniversalroyallawoflove.org/"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ 
