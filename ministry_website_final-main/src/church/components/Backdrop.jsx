@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import heroBgImage from '../assets/backdrop-cloud.png';
 export default function Backdrop({ title }) {
     return <div>
@@ -37,8 +36,10 @@ export default function Backdrop({ title }) {
                     {title}
                 </h1>
 
-                <Link 
-                    to="/participant-registration"
+                <a 
+                    href="https://project.theuniversalroyallawoflove.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     style={{ 
                         display: 'inline-block', 
                         backgroundColor: '#ffffff', 
@@ -61,7 +62,7 @@ export default function Backdrop({ title }) {
                     <span style={{ fontSize: '13px', fontWeight: 'bold', color: '#b45309', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                         Join "The Universal Royal Law of Love" Project &rarr;
                     </span>
-                </Link>
+                </a>
             </div>
         </div>
     </div>
