@@ -109,6 +109,8 @@ export default function DonateUs() {
     e.preventDefault();
     const finalAmt = customAmount || selectedAmount;
 
+    alert("Thank you for your donation! Your generosity and support are deeply appreciated by God Cares Ministries and the family faithfully serving behind these initiatives.");
+
     setSubmitting(true);
     try {
       const { error } = await supabase
